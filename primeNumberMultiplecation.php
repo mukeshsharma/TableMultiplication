@@ -5,12 +5,6 @@
 // Date:08/05/2019
 
 
-interface primeNumberMultiTable {
-
-    public function generatePrimeNumber();
-
-    public function generateMultiplicationTable();
-}
 
 class generatePrimeNumbers {
 
