@@ -1,4 +1,5 @@
 Test Case 1: Check results on entering valid inputs 
 Test Case 2: Check results on entering Invalid Inputs
 Test Case 3: Check results on without entering params
+Test Case 4: Check results on not entering all params
 
