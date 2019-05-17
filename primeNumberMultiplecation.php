@@ -4,10 +4,18 @@
 // Author : Mukesh Kumar Seemawat
 // Date:08/05/2019
 
-class PrimeNumberMultiplication {
+
+interface primeNumberMultiTable {
+
+    public function generatePrimeNumber();
+
+    public function generateMultiplicationTable();
+}
+
+class generatePrimeNumbers {
 
     // Function to generate prime number from given input
-    public function generatePrimeNumber($argv) {
+    public function generatePrimeNumber($argv = array()) {
         $count = 0;
         $number = 2;
         echo " | ";
@@ -31,11 +39,17 @@ class PrimeNumberMultiplication {
             }
             $number = $number + 1;
         }
-        $this->generateMultiplicationTable($primeNumberArray);
+        return $primeNumberArray;
     }
 
+}
+
+
+class PrimeNumberMultiplication extends generatePrimeNumbers {
+
     // Function to generate multiplecation table from prime number 
-    public function generateMultiplicationTable($primeNumberAsInput) {
+    public function generateMultiplicationTable($inputs) {
+        $primeNumberAsInput = $this->generatePrimeNumber($inputs);
         echo "\n";
         echo " + ";
         echo "\n";
@@ -51,6 +65,10 @@ class PrimeNumberMultiplication {
 
 }
 
-$classObj = new PrimeNumberMultiplication;
-$classObj->generatePrimeNumber($argv);
+if (isset($argv[2]) && !empty($argv[2]) && is_numeric($argv[2])) {
+    $classObj = new PrimeNumberMultiplication;
+    $classObj->generateMultiplicationTable($argv);
+} else {
+    echo "Invalid Input. Please provide the valid Input !.\n";
+}
 ?>
